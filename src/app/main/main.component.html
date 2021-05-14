@@ -1,0 +1,23 @@
+<div>
+    <table class="users">
+        <tr class="headers">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Street</th>
+            <th>Suite</th>
+            <th>City</th>
+            <th>Zipcode</th>
+            <th>Lat</th>
+            <th>Long</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Company Name</th>
+            <th>Catch Phrase</th>
+            <th>BS</th>
+        </tr>
+        <tr (edit)="edit($event)" app-user *ngFor="let user of (users$ | async)" [user]="user">
+        </tr>
+    </table>
+</div>
