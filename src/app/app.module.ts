@@ -13,6 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { GeocolorDirective } from './geocolor.directive';
 import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { PostsModule } from './posts/posts.module';
+import { AlbumsModule } from './albums/albums.module';
+import { NewUserComponent } from './new-user/new-user.component';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +30,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     GeocolorDirective,
     UserComponent,
     EditUserComponent,
+    NavbarComponent,
+    NewUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +39,10 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    PostsModule,
+    AlbumsModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -44,7 +58,20 @@ import { EditUserComponent } from './edit-user/edit-user.component';
         component: EditUserComponent,
         canActivate: [AuthGuard],
       },
+      {
+        path: 'newUser',
+        component: NewUserComponent,
+      },
+      {
+        path: 'posts',
+        loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule),
+      },
+      {
+        path: 'albums',
+        loadChildren: () => import('./albums/albums.module').then(m => m.AlbumsModule),
+      },
     ]),
+    BrowserAnimationsModule,
   ],
   providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent],

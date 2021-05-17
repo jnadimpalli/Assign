@@ -1,0 +1,9 @@
+<div class="albums">
+    <h1>All Albums</h1>
+
+    <ul>
+        <li *ngFor="let album of (albums$ | async)">
+            {{ album.title }} <button type="button" class="btn btn-primary" (click)="getLink(album.id)">More Info</button>
+        </li>
+    </ul>
+</div>

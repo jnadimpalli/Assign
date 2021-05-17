@@ -1,0 +1,9 @@
+<div class="photos">
+    <h1>Photos for this Album</h1>
+
+    <ul>
+        <li *ngFor="let photo of photos">
+            <img [src]="photo.url">
+        </li>
+    </ul>
+</div>
