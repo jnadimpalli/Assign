@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { User } from './User';
+import { User } from './models/User';
 import { AuthService } from '../../auth.service';
 
 @Component({
