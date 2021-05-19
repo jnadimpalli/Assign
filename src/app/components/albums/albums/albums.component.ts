@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Album } from '../Album';
+import { Album } from '../model/Album';
 
 @Component({
   selector: 'app-albums',
