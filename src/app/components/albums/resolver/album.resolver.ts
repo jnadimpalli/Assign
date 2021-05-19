@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
 import { Observable } from "rxjs";
-import { AlbumService } from "./album.service";
-import { Photo } from "./Photo";
+import { AlbumService } from "../service/album.service";
+import { Photo } from "../Photo";
 
 @Injectable()
 export class AlbumResolver implements Resolve<Photo[]>{

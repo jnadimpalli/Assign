@@ -2,24 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { MainComponent } from './main/main.component';
+import { LoginComponent } from './components/login/login.component';
+import { MainComponent } from './components/main/main.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GeocolorDirective } from './geocolor.directive';
-import { UserComponent } from './user/user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
+import { UserComponent } from './components/user/user.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { PostsModule } from './posts/posts.module';
-import { AlbumsModule } from './albums/albums.module';
-import { NewUserComponent } from './new-user/new-user.component';
+import { PostsModule } from './modules/posts.module';
+import { AlbumsModule } from './modules/albums.module';
+import { NewUserComponent } from './components/new-user/new-user.component';
 
 
 @NgModule({
@@ -35,7 +35,6 @@ import { NewUserComponent } from './new-user/new-user.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -64,11 +63,11 @@ import { NewUserComponent } from './new-user/new-user.component';
       },
       {
         path: 'posts',
-        loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule),
+        loadChildren: () => import('./modules/posts.module').then(m => m.PostsModule),
       },
       {
         path: 'albums',
-        loadChildren: () => import('./albums/albums.module').then(m => m.AlbumsModule),
+        loadChildren: () => import('./modules/albums.module').then(m => m.AlbumsModule),
       },
     ]),
     BrowserAnimationsModule,

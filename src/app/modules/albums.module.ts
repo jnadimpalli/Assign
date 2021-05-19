@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AlbumsComponent } from './albums/albums.component';
-import { AlbumComponent } from './album/album.component';
-import { AlbumResolver } from './album.resolver';
-import { AlbumService } from './album.service';
-
+import { AlbumsComponent } from '../components/albums/albums/albums.component';
+import { AlbumComponent } from '../components/albums/photo/album.component';
+import { AlbumResolver } from '../components/albums/resolver/album.resolver';
+import { AlbumService } from '../components/albums/service/album.service';
 
 
 @NgModule({

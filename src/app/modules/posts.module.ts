@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostComponent } from './post/post.component';
-import { PostsComponent } from './posts/posts.component';
+import { PostComponent } from "../components/posts/post/post.component";
+import { PostsComponent } from '../components/posts/posts/posts.component';
 import { RouterModule } from '@angular/router';
 
 
