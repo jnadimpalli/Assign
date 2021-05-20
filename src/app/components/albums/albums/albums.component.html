@@ -3,7 +3,7 @@
 
     <ul>
         <li *ngFor="let album of (albums$ | async)">
-            {{ album.title }} <button type="button" class="btn btn-primary" (click)="getLink(album.id)">More Info</button>
+            {{ album.title }} <button type="button" mat-raised-button color="warn" class="btn btn-primary" (click)="getLink(album.id)">More Info</button>
         </li>
     </ul>
 </div>

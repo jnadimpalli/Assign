@@ -5,15 +5,15 @@ import { AlbumsComponent } from '../components/albums/albums/albums.component';
 import { AlbumComponent } from '../components/albums/photo/album.component';
 import { AlbumResolver } from '../components/albums/resolver/album.resolver';
 import { AlbumService } from '../components/albums/service/album.service';
-
-
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AlbumsComponent,
-    AlbumComponent
+    AlbumComponent,
   ],
   imports: [
     CommonModule,
+    MatButtonModule,
     RouterModule.forRoot([
       {
         path: 'albums',
