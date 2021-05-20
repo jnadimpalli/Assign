@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SidenavServiceService } from 'src/app/sidenav-service.service';
 
 @Component({
   selector: 'app-new-user',
@@ -11,10 +12,11 @@ export class NewUserComponent implements OnInit {
 
   userForm: FormGroup;
 
-  constructor(private fb:FormBuilder, private router: Router) {
+  constructor(private fb:FormBuilder, private router: Router, private sidenav: SidenavServiceService) {
   }
 
   ngOnInit(): void {
+    this.sidenav.open();
     this.userForm = this.fb.group({
         name: ['', [Validators.required, Validators.minLength(5)]],
         phone: '',

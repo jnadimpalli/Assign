@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SidenavServiceService } from 'src/app/sidenav-service.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -13,7 +14,7 @@ export class EditUserComponent implements OnInit {
   user: any;
   isEditMode: boolean = true;
   addUser: any;
-  constructor(private fb:FormBuilder, private router: Router) {
+  constructor(private fb:FormBuilder, private router: Router, private sidenav: SidenavServiceService) {
     const user = this.router.getCurrentNavigation().extras.state.userData;
     const add=this.router.getCurrentNavigation().extras.state.addUser;
     this.user = user;
@@ -21,7 +22,7 @@ export class EditUserComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    
+    this.sidenav.open();
     
     if(this.isEditMode){
       this.loginForm = this.fb.group({
