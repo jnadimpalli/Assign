@@ -25,7 +25,10 @@ import { PostsModule } from './modules/posts.module';
 import { AlbumsModule } from './modules/albums.module';
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { SidenavServiceService } from './sidenav-service.service';
-
+import { CitiesService } from './cities.service';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDialogModule } from '@angular/material/dialog';
+import { UserDialogComponent } from './user-dialog/user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { SidenavServiceService } from './sidenav-service.service';
     EditUserComponent,
     NavbarComponent,
     NewUserComponent,
+    UserDialogComponent,
   ],
+  entryComponents: [UserDialogComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -49,6 +54,8 @@ import { SidenavServiceService } from './sidenav-service.service';
     MatInputModule,
     MatTableModule,
     MatButtonModule,
+    MatAutocompleteModule,
+    MatDialogModule,
     PostsModule,
     AlbumsModule,
     RouterModule.forRoot([
@@ -84,7 +91,7 @@ import { SidenavServiceService } from './sidenav-service.service';
     ]),
     BrowserAnimationsModule,
   ],
-  providers: [AuthGuard, AuthService, SidenavServiceService],
+  providers: [AuthGuard, AuthService, SidenavServiceService, CitiesService],
   bootstrap: [AppComponent],
   exports: [
     FormsModule,

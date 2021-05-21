@@ -61,7 +61,12 @@
         <div>
             <mat-form-field class="form-group">
                 <mat-label class="control-label col-sm-2">City: </mat-label>
-                <input matInput type="text" class="form-control" placeholder="City" id="city" formControlName="city" [ngClass]="{'is-invalid': loginForm.get('city').touched && loginForm.get('city').invalid}">
+                <input matInput [matAutocomplete]="auto" type="text" class="form-control" placeholder="City" id="city" formControlName="city" [ngClass]="{'is-invalid': loginForm.get('city').touched && loginForm.get('city').invalid}">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let city of citiesArr" [value]="city">
+                        {{city}}
+                    </mat-option>
+                </mat-autocomplete>
                 <div *ngIf="loginForm.get('city').touched && loginForm.get('city').invalid" class="invalid-feedback">
                     <div>City is required</div>
                 </div>

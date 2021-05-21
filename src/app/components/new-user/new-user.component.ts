@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CitiesService } from 'src/app/cities.service';
 import { SidenavServiceService } from 'src/app/sidenav-service.service';
 
 @Component({
@@ -11,12 +12,14 @@ import { SidenavServiceService } from 'src/app/sidenav-service.service';
 export class NewUserComponent implements OnInit {
 
   userForm: FormGroup;
+  citiesArr: string[];
 
-  constructor(private fb:FormBuilder, private router: Router, private sidenav: SidenavServiceService) {
+  constructor(private fb:FormBuilder, private router: Router, private sidenav: SidenavServiceService, private cities: CitiesService) {
   }
 
   ngOnInit(): void {
     this.sidenav.open();
+    this.citiesArr = this.cities.cities;
     this.userForm = this.fb.group({
         name: ['', [Validators.required, Validators.minLength(5)]],
         phone: '',
