@@ -29,6 +29,7 @@ import { CitiesService } from './cities.service';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { UserDialogComponent } from './user-dialog/user-dialog.component';
     MatButtonModule,
     MatAutocompleteModule,
     MatDialogModule,
+    MatPaginatorModule,
     PostsModule,
     AlbumsModule,
     RouterModule.forRoot([
