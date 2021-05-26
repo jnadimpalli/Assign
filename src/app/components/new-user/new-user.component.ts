@@ -25,8 +25,8 @@ export class NewUserComponent implements OnInit {
     this.citiesArr = this.cities.cities;
     this.userForm = this.fb.group({
         name: ['', [Validators.required, Validators.minLength(5)]],
-        phone: '',
-        email: '',
+        phone: ['', [Validators.required]],
+        email: ['', [Validators.required]],
         addresses: this.fb.array([
             this.initAddress(),
         ])
@@ -73,9 +73,24 @@ export class NewUserComponent implements OnInit {
         catchPhrase: '',
         bs: '', 
       },
-  };
+    };
   
-  this.dialog.open(UserDialogComponent, { data: user });
+    const values = this.userForm.value;
+    let missingFields = false;
+
+    if (values.name == "" || values.phone == "" || values.email == "") {
+      missingFields = true;
+    }
+
+    for (const address of values.addresses) {
+      if (address.doorNo == "" || address.street == "" || address.city == "" || address.area == "" || address.pin == "") {
+        missingFields = true;
+      }
+    }
+
+    if (!missingFields) {
+      this.dialog.open(UserDialogComponent, { data: user });
+    }
   }
 
 }

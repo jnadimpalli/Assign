@@ -11,3 +11,8 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
     background-color: #ffffff;
 }
+
+mat-paginator {
+    width: fit-content;
+    background: transparent;
+}

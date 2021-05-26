@@ -8,6 +8,7 @@ import { AlbumService } from '../components/albums/service/album.service';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthGuard } from '../auth.guard';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     CommonModule,
     MatButtonModule,
     MatPaginatorModule,
+    NgbModule,
     RouterModule.forRoot([
       {
         path: 'albums',

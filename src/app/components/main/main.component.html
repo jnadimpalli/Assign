@@ -1,5 +1,8 @@
 <div>
     <h1>All Users</h1>
+    <mat-form-field>
+        <input (keyup)="applyFilter()" [(ngModel)]="filterValue" matInput placeholder="Filter">
+    </mat-form-field>
     <table mat-table [dataSource]="users" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> Id </th>
@@ -84,4 +87,8 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <mat-paginator #paginator
+    [pageSize]="5"
+    [pageSizeOptions]="[2, 5, 10]" 
+    showFirstLastButtons></mat-paginator>
 </div>

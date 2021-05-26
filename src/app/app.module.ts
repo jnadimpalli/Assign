@@ -30,6 +30,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatPaginatorModule,
     PostsModule,
     AlbumsModule,
+    NgbModule,
     RouterModule.forRoot([
       {
         path: '',
